@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Checkout do Código
         uses: actions/checkout@v3
-        
+
       - name: Instalar o Poetry
         run: |
             curl -sSL https://install.python-poetry.org | python3 -
@@ -28,3 +28,6 @@ jobs:
               poetry-${{ runner.os }}-
       - name: Instalar dependências
         run: poetry install --no-root
+
+      - name: Verificar PEP8
+        run: poetry run flake8 jogo.py

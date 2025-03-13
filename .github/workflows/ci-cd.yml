@@ -24,4 +24,4 @@ jobs:
             restore-keys: |
               poetry-${{ runner.os }}-
       - name: Instalar dependências
-        run: poetry install
+        run: poetry install --no-root

@@ -31,3 +31,13 @@ jobs:
 
       - name: Verificar PEP8
         run: poetry run flake8 jogo.py
+
+      - name: Verificar pylint
+        run: poetry run pylint jogo.py
+
+      - name: Verificar mypy
+        run: poetry run mypy jogo.py
+
+      - name: Verificar radon
+        run: poetry run radon cc jogo.py -a              
+
